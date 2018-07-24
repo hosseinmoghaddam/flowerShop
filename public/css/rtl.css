@@ -1,0 +1,37 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+@font-face {
+    font-family: Samim;
+    src: url('../fonts/Samim-persian-digits-overwrite.eot');
+    src: url('../fonts/Samim-persian-digits-overwrite.eot?#iefix') format('embedded-opentype'), url('../fonts/Samim-persian-digits-overwrite.woff') format('woff'), url('../fonts/Samim-persian-digits-overwrite.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: Samim;
+    src: url('../fonts/Samim-Bold-persian-digits-overwrite.eot');
+    src: url('../fonts/Samim-Bold-persian-digits-overwrite.eot?#iefix') format('embedded-opentype'), url('../fonts/Samim-Bold-persian-digits-overwrite.woff') format('woff'), url('../fonts/Samim-Bold-persian-digits-overwrite.ttf') format('truetype');
+    font-weight: bold;
+}
+body {
+    text-align: right;
+    direction: rtl;
+    font-family: 'Samim', serif;
+}
+div[class*="col-"] {
+    float: right;
+}
+#language-select {
+    float: left;
+    margin: 7px 0 0 20px;
+}
+
+.menutoggle {
+    margin: -2px -59px 0 20px;
+
+}
+.navbar-nav {
+    padding-right: 0;
+}
