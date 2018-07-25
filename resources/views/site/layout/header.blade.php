@@ -65,10 +65,10 @@
                             </ul>
                         </div>
                         <div id="language" class="btn-group">
-                            <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> <img src="/site/image/flags/gb.png" alt="انگلیسی" title="انگلیسی">انگلیسی <i class="fa fa-caret-down"></i></span></button>
+                            <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> <img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی">فارسی <i class="fa fa-caret-down"></i></span></button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/gb.png" alt="انگلیسی" title="انگلیسی" /> انگلیسی</button>
+                                    <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی" /> فارسی</button>
                                 </li>
                                 <li>
                                     <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/ar.png" alt="عربی" title="عربی" /> عربی</button>

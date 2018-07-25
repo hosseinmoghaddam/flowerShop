@@ -20,19 +20,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="category.html" >بانوان</a> </li>
-                            <li><a href="category.html">دخترانه<span>&rsaquo;</span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="category.html">زیردسته ها </a></li>
-                                        <li><a href="category.html">زیردسته جدید</a></li>
-                                        <li><a href="category.html">زیردسته جدید</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="category.html">پسرانه</a></li>
-                            <li><a href="category.html">نوزاد</a></li>
-                            <li><a href="category.html">لوازم <span>&rsaquo;</span></a>
+
                                 <div class="dropdown-menu">
                                     <ul>
                                         <li><a href="category.html">زیردسته های جدید</a></li>
@@ -42,7 +30,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="dropdown"> <a href="category.html">الکترونیکی</a>
+				 <!--       <li class="dropdown"> <a href="category.html">الکترونیکی</a>
                     <div class="dropdown-menu">
                         <ul>
                             <li> <a href="category.html">لپ تاپ <span>&rsaquo;</span></a>
@@ -188,7 +176,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="dropdown information-link"><a>برگه ها</a>
+                <li class="dropdown information-link"><a>برگه ها</a>-->
                     <div class="dropdown-menu">
                         <ul>
                             <li><a href="login.html">ورود</a></li>
