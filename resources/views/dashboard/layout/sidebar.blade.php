@@ -19,8 +19,8 @@
                 <li class="menu-item-has-children active dropdown">
                     <a href="#" class="dropdown-toggle" style="font-family: 'Samim', serif" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>مدیریت گل ها</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html" style="font-family: 'Samim', serif">لیست گل ها</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html" style="font-family: 'Samim', serif">افزودن گل</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('product.index') }}" style="font-family: 'Samim', serif">لیست گل ها</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="{{ route('product.create') }}" style="font-family: 'Samim', serif">افزودن گل</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children active dropdown">
