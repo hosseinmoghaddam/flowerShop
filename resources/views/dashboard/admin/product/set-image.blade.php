@@ -76,7 +76,7 @@
                                 <a href="{{ $product->image1 }}" class="gallery-popup" title="تصویر 1">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image1 }}" alt="img" class="gallery-thumb-img" />
+                                            <img src="{{ $product->image1 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                 <a href="{{ $product->image2 }}" class="gallery-popup" title="تصویر 2">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image2 }}" alt="img" class="gallery-thumb-img" />
+                                            <img src="{{ $product->image2 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                 <a href="{{ $product->image3 }}" class="gallery-popup" title="تصویر 3">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image3 }}" alt="img" class="gallery-thumb-img" />
+                                            <img src="{{ $product->image3 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                 <a href="{{ $product->image4 }}" class="gallery-popup" title="تصویر 4">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image4 }}" alt="img" class="gallery-thumb-img" />
+                                            <img src="{{ $product->image4 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>

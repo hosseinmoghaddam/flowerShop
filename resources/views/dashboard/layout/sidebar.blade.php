@@ -13,7 +13,7 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.html" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-dashboard"></i>داشبورد </a>
+                    <a href="{{ route('home') }}" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-dashboard"></i>داشبورد </a>
                 </li>
                 <h3 class="menu-title" style="font-family: 'Samim', serif">مدیریت</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children active dropdown">

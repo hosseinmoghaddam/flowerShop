@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $products = Product::all();
+        $productSum = count($products);
+
+        $tags = Tag::all();
+        $tagSum = count($tags);
+
+        return view('dashboard.index', ['productSum'=> $productSum, 'tagSum'=> $tagSum]);
     }
 }

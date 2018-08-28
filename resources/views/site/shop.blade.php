@@ -234,7 +234,7 @@
                 },
                 success: function (data) {
                     alert('اضافه شد');
-                    $('#count').html( data.count );
+                    $('#cart-total').html( data.count +"- آیتم "+ data.care  +" تومان " );
 
                 },
                 error: function (request, msg, error) {

@@ -29,10 +29,10 @@ $factory->define(App\Product::class, function () {
     return [
         'name' => 'تستستتستس',
         'description' => 'تستس تستست تستست',
-        'image1' =>  '',
-        'image2' =>  '',
-        'image3' =>  '',
-        'image4' =>  '',
+        'image1' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
+        'image2' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
+        'image3' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
+        'image4' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
         'rate' => 5,
         'price' => 5,
     ];

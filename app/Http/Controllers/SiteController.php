@@ -67,7 +67,7 @@ class SiteController extends Controller
     public function add(Product $product)
     {
         Session::push('products', $product);
-        return ['status' => true, 'count' => count(Session::get('products'))];
+        return ['status' => true, 'count' => count(Session::get('products')), 'care' => $product->sum()];
     }
 
     public function search(Request $request)

@@ -143,13 +143,13 @@
                 <div class="owl-carousel related_pro">
                     @foreach($products as $product)
                         <div class="product-thumb">
-                            <div class="image"><a href="product.html"><img src="{{ $product->image1 }}"
-                                                                           alt="تبلت ایسر" title="تبلت ایسر"
+                            <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}"
+                                                                           alt="{{ $product->name }}" title="{{ $product->name }}"
                                                                            class="img-responsive"/></a></div>
                             <div class="caption">
-                                <h4><a href="product.html">{{ $product->name }}</a></h4>
+                                <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
                                 <p class="price"><span class="price-new">{{ $product->price }} تومان</span> <span
-                                            class="price-old">240000 تومان</span>
+                                            class="price-old">{{ ($product->price)-3 }} تومان</span>
                                     <span class="saving">-5%</span></p>
                                 <div class="rating"><span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i
                                                 class="fa fa-star-o fa-stack-2x"></i></span> <span
@@ -185,14 +185,14 @@
             <div class="side-item">
                 @foreach($products as $product)
                     <div class="product-thumb clearfix">
-                        <div class="image"><a href="product.html"><img src="{{ $product->image2 }}"
+                        <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image2 }}"
                                                                        alt="{{ $product->name }}"
                                                                        title="{{ $product->name }}"
                                                                        class="img-responsive"/></a></div>
                         <div class="caption">
-                            <h4><a href="{{ route('detail', $product->id) }}">تی شرت کتان مردانه</a></h4>
-                            <p class="price"><span class="price-new">{{ $product->name }} تومان</span> <span
-                                        class="price-old">122000 تومان</span>
+                            <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
+                            <p class="price"><span class="price-new">{{ $product->price }} تومان</span> <span
+                                        class="price-old">{{ ($product->price)+3 }} تومان</span>
                                 <span class="saving">-10%</span></p>
                         </div>
                     </div>
