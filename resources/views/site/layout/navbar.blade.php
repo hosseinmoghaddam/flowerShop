@@ -5,31 +5,20 @@
     <div class="container">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="home_link" title="خانه" href="index.html">خانه</a></li>
-                <li class="dropdown"><a href="category.html">گلها</a>
+                <li><a class="home_link" title="خانه" href="{{ route('index') }}">خانه</a></li>
+                <li class="dropdown"><a href="{{ route('shop') }}">گلها</a>
                     <div class="dropdown-menu">
+                       <div class="hidden"> {{ $tags = \App\Tag::all() }}</div>
                         <ul>
-                            <li><a href="category.html"> گرم سیری <span>&rsaquo;</span></a>
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="category.html">زیردسته ها </a> </li>
-                                        <li><a href="category.html">زیردسته ها </a> </li>
-                                        <li><a href="category.html">زیردسته ها </a> </li>
-                                        <li><a href="category.html">زیردسته ها </a> </li>
-                                        <li><a href="category.html">زیردسته جدید </a> </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                                <div class="dropdown-menu">
-                                    <ul>
-                                        <li><a href="category.html">زیردسته های جدید</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            @foreach($tags as $tag)
+                            <li><a href="category.html"> {{ $tag->name }} </a>
+                                @endforeach
                         </ul>
                     </div>
                 </li>
+                <li><a class="home_link" title="درباره ما" href="{{ route('about') }}">درباره ما</a></li>
+                <li><a class="home_link" title="تماس با ماط" href="{{ route('contact') }}">تماس با ما</a></li>
+
 				 <!--       <li class="dropdown"> <a href="category.html">الکترونیکی</a>
                     <div class="dropdown-menu">
                         <ul>

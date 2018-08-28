@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html dir="rtl">
+@inject('ps','App\Product')
 <head>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
@@ -19,6 +20,9 @@
     <link rel="stylesheet" type="text/css" href="/site/css/stylesheet-rtl.css" />
     <link rel="stylesheet" type="text/css" href="/site/css/responsive-rtl.css" />
     <link rel="stylesheet" type="text/css" href="/site/css/stylesheet-skin2.css" />
+    @yield("page-specific-plugin-styles")
+    @yield("inline-style")
+
 
     <!-- CSS Part End-->
 </head>
@@ -114,25 +118,21 @@
                         <div id="cart">
                             <button type="button" data-toggle="dropdown" data-loading-text="بارگذاری ..." class="heading dropdown-toggle">
                                 <span class="cart-icon pull-left flip"></span>
-                                <span id="cart-total">2 آیتم - 132000 تومان</span></button>
+                                <span id="cart-total">{{ count(\Session::get('products'))}} آیتم - {{ $ps->sum() }} تومان</span></button>
                             <ul class="dropdown-menu">
                                 <li>
                                     <table class="table">
                                         <tbody>
+                                        @if(\Session::get('products'))
+                                        @foreach(\Session::get('products') as $p)
                                         <tr>
-                                            <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="کفش راحتی مردانه" alt="کفش راحتی مردانه" src="/site/image/product/sony_vaio_1-50x75.jpg"></a></td>
-                                            <td class="text-left"><a href="product.html">کفش راحتی مردانه</a></td>
-                                            <td class="text-right">x 1</td>
-                                            <td class="text-right">32000 تومان</td>
+                                            <td class="text-center"><a href="{{ route('detail', $p->id) }}"><img class="img-thumbnail" style="max-width: 50%" title="{{ $p->name }}" alt="{{ $p->name }}" src="{{ $p->image1 }}"></a></td>
+                                            <td class="text-left"><a href="{{ route('detail', $p->id) }}">{{ $p->name }}</a></td>
+                                            <td class="text-right">{{ $p->price }} تومان</td>
                                             <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-center"><a href="product.html"><img class="img-thumbnail" title="تبلت ایسر" alt="تبلت ایسر" src="/site/image/product/samsung_tab_1-50x75.jpg"></a></td>
-                                            <td class="text-left"><a href="product.html">تبلت ایسر</a></td>
-                                            <td class="text-right">x 1</td>
-                                            <td class="text-right">98000 تومان</td>
-                                            <td class="text-center"><button class="btn btn-danger btn-xs remove" title="حذف" onClick="" type="button"><i class="fa fa-times"></i></button></td>
-                                        </tr>
+                                            @endforeach
+                                            @endif
                                         </tbody>
                                     </table>
                                 </li>
@@ -142,7 +142,7 @@
                                             <tbody>
                                             <tr>
                                                 <td class="text-right"><strong>جمع کل</strong></td>
-                                                <td class="text-right">132000 تومان</td>
+                                                <td class="text-right">{{ $ps->sum() }} تومان</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>کسر هدیه</strong></td>
@@ -150,15 +150,15 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>مالیات</strong></td>
-                                                <td class="text-right">11880 تومان</td>
+                                                <td class="text-right">{{ ($ps->sum())/9 }} تومان</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>قابل پرداخت</strong></td>
-                                                <td class="text-right">139880 تومان</td>
+                                                <td class="text-right">{{ ($ps->sum())-(($ps->sum())/9)-4000 }} تومان</td>
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p class="checkout"><a href="cart.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>
+                                        <p class="checkout"><a href="{{ route('care') }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -167,10 +167,13 @@
                     <!-- Mini Cart End-->
                     <!-- جستجو Start-->
                     <div class="col-table-cell col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
+                        <form class="navbar-form" method="post" action="{{ route('search') }}" role="search">
+                            @csrf
                         <div id="search" class="input-group">
                             <input id="filter_name" type="text" name="search" value="" placeholder="جستجو" class="form-control input-lg" />
-                            <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="button-search"><i class="fa fa-search"></i></button>
                         </div>
+                        </form>
                     </div>
                     <!-- جستجو End-->
                 </div>

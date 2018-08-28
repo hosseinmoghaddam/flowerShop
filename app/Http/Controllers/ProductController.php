@@ -33,8 +33,7 @@ class ProductController extends Controller
             'count' => 'required|integer',
         ]);
 
-
-        $product= new Product([
+        $product = new Product([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
             'count' => (integer) $request->get('count'),
@@ -53,6 +52,10 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         return view('dashboard.admin.product.edit',compact('product'));
+    }
+
+    public function imageset(Product $product){
+        return view('dashboard.admin.product.set-image',compact('product'));
     }
 
     public function destroy(Product $product)

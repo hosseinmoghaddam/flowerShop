@@ -20,13 +20,25 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
+        \Validator::extend('valid_username', function($attr, $value){
+
+            return preg_match('/^\S*$/u', $value);
+
+        });
+
+        \Validator::extend('without_spaces', function($attr, $value){
+            return preg_match('/^\S*$/u', $value);
+        });
+
         $this->validate($request,[
             'name' => 'required|string|max:255',
+            'en_name' => 'required|string|without_spaces|valid_username|max:255',
         ]);
 
         $tag = new Tag([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
+            'en_name' => $request->get('en_name'),
         ]);
 
         $tag->save();

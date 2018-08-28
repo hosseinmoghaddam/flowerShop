@@ -100,5 +100,11 @@
 <script type="text/javascript" src="/site/js/custom.js"></script>
 <!-- JS Part End-->
 
+@yield("page-specific-plugin-scripts")
+
+
+@yield("inline-scripts")
+
+
 </body>
 </html>

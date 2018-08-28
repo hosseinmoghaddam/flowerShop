@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/css/themify-icons.css">
     <link rel="stylesheet" href="/css/flag-icon.min.css">
     <link rel="stylesheet" href="/css/cs-skin-elastic.css">
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+<!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     @yield("page-specific-plugin-styles")
     <link rel="stylesheet" href="/scss/style.css">
 
@@ -46,16 +46,22 @@
 @yield('container')
 
 
-@yield("page-specific-plugin-scripts")
 
 <script src="/js/vendor/jquery-2.1.4.min.js"></script>
 <script src="/js/popper.min.js"></script>
 <script src="/js/plugins.js"></script>
 <script src="/js/main.js"></script>
 
+@yield("page-specific-plugin-scripts")
 
 
 @yield("inline-scripts")
+
+<script>
+    $(document).ready(function () {
+        $('#message2').delay(3000).slideUp();
+    });
+</script>
 
 </body>
 </html>

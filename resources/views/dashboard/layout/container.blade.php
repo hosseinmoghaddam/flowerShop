@@ -144,6 +144,18 @@
 
     <div class="content mt-3">
         <div class="animated fadeIn">
+            <div id="con-message"></div>
+
+            @if(session()->has('message'))
+                <div class="alert alert-info" id="message2">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <i class="ace-icon fa fa-times"></i>
+                    </button>
+                    {{ session('message') }}
+                    <br>
+                </div>
+
+            @endif
         @yield('content')
         </div><!-- .animated -->
     </div><!-- .content -->

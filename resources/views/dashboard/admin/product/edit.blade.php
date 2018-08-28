@@ -1,7 +1,7 @@
 @extends('dashboard.layout.container')
 
 @section('title')
-افزودن گل جدید
+ویرایش گل  {{$product->name}}
     @endsection
 
 @section('b-bs')
@@ -20,7 +20,7 @@
 @section('content')
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">Data Table</strong>
@@ -31,15 +31,16 @@
 
             <div class="card-block">
 
-                <form class="form-horizontal" method="POST" action="{{ route('product.store') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('product.update', $product->id) }}">
                     @csrf
+                    @method('PATCH')
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="name" class="col-md-12 control-label">نام</label>
 
                         <div class="col-md-12">
                             <input id="name" class="form-control" name="name"
-                                   value="{{ old('name') }}" required autofocus>
+                                   value="{{ old('name',$product->name) }}" required autofocus>
                             @if ($errors->has('name'))
                                 <span class="help-block">
                         <strong>{{ $errors->first('name') }}</strong>
@@ -54,7 +55,7 @@
 
                         <div class="col-md-12">
                             <input id="description" class="form-control" name="description"
-                                   value="{{ old('description') }}" required>
+                                   value="{{ old('description',$product->description) }}" required>
                             @if ($errors->has('description'))
                                 <span class="help-block">
                         <strong>{{ $errors->first('description') }}</strong>
@@ -69,7 +70,7 @@
 
                         <div class="col-md-12">
                             <input id="price" type="number" class="form-control" name="price"
-                                   value="{{ old('price') }}" required>
+                                   value="{{ old('price', $product->price) }}" required>
 
                             @if ($errors->has('price'))
                                 <span class="help-block">
@@ -84,7 +85,7 @@
 
                         <div class="col-md-12">
                             <input id="count" type="number" class="form-control" name="count"
-                                   value="{{ old('count') }}" required>
+                                   value="{{ old('count', $product->count) }}" required>
 
                             @if ($errors->has('count'))
                                 <span class="help-block">
@@ -96,31 +97,11 @@
 
 
                     <div class="form-group">
-                        <label class="control-label col-md-12"> دسته </label>
-
-                        <div class="col-xs-6 col-sm-12">
-                           {{-- <select multiple="multiple" id="state" name="state" class="select2 form-control select2-multiple" data-placeholder="برای انتخاب کلیک کنید" title="select">
-                                @foreach($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                @endforeach
-                            </select>--}}
-
-                            <select class="js-example-basic-multiple col-sm-12" name="states[]" multiple="multiple">
-                                @foreach($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
                         <div class="col-md-12 col-md-offset-4">
                             <button  class="btn btn-primary btn-block">ثبت</button>
                         </div>
                     </div>
                 </form>
-
             </div>
 
     </div> <!-- end row -->

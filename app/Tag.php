@@ -10,6 +10,7 @@ class Tag extends Model
     protected $fillable = [
         'name',
         'description',
+        'en_name',
     ];
 
     public function products()

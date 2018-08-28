@@ -49,6 +49,7 @@
                             <td>{{ $product->description }}</td>
                             <td>
 
+                                <a href="{{ route('product.imageset', $product->id ) }}" data-toggle="tooltip" class="btn btn-outline-success" ><i class="fa fa-image"></i></a>
                                 <a href="{{ route('product.edit', $product->id ) }}" data-toggle="tooltip" class="btn btn-outline-primary" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                                 <a href="#" onclick="confirmDelete('{{ route('product.destroy', $product->id) }}', '{{ $product->id }}')"  id="sa-warning" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-times"></i></a>
 
