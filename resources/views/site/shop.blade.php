@@ -154,27 +154,35 @@
             </div>
             <br />
             <div class="row products-category">
-                @foreach($products as $product)
-                    <div class="product-layout product-list col-xs-12">
-                        <div class="product-thumb">
-                            <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="img-responsive" /></a></div>
-                            <div>
-                                <div class="caption">
-                                    <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
-                                    <p class="description">{{ $product->description }}</p>
-                                    <p class="price"> <span class="price-new">{{ $product->price }} تومان</span> <span class="price-old">{{ $product->price  }} تومان</span> <span class="saving">-26%</span> <span class="price-tax">بدون مالیات : 90000 تومان</span> </p>
-                                </div>
-                                <div class="button-group">
-                                    <button class="btn-primary" type="button" onClick="addToCare('{{route('add',$product->id)}}','{{csrf_token()}}')"><span>افزودن به سبد</span></button>
-                                    <div class="add-to-links">
-                                        <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی ها" onClick=""><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
-                                        <button type="button" data-toggle="tooltip" title="مقایسه این محصول" onClick=""><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                @if(count($products))
+                    @foreach($products as $product)
+                        <div class="product-layout product-list col-xs-12">
+                            <div class="product-thumb">
+                                <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="img-responsive" /></a></div>
+                                <div>
+                                    <div class="caption">
+                                        <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
+                                        <p class="description">{{ $product->description }}</p>
+                                        <p class="price"> <span class="price-new">{{ $product->price }} تومان</span> <span class="price-old">{{ $product->price  }} تومان</span> <span class="saving">-26%</span> <span class="price-tax">بدون مالیات : 90000 تومان</span> </p>
+                                    </div>
+                                    <div class="button-group">
+                                        <button class="btn-primary" type="button" onClick="addToCare('{{route('add',$product->id)}}','{{csrf_token()}}')"><span>افزودن به سبد</span></button>
+                                        <div class="add-to-links">
+                                            <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی ها" onClick=""><i class="fa fa-heart"></i> <span>افزودن به علاقه مندی ها</span></button>
+                                            <button type="button" data-toggle="tooltip" title="مقایسه این محصول" onClick=""><i class="fa fa-exchange"></i> <span>مقایسه این محصول</span></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    @endforeach
+                @else
+
+                    <div class="product-layout product-list col-xs-12">
+                        هیچ موردی یافت نشد.
+
                     </div>
-                @endforeach
+                @endif
 
             </div>
                 <div class="row">

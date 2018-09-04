@@ -70,11 +70,11 @@
                 <div class="category-module-content">
                     <ul id="sub-cat" class="tabs">
                         <div class="hidden">{{ $i = 0 }}</div>
-                        @foreach($cat1[1] as $cat2)
+                        @foreach($cat1[0] as $cat2)
                                     <li><a href="#tab-{{ $cat2->en_name }}">{{ $cat2->name }}</a></li>
           @endforeach
                     </ul>
-                    @foreach($cat1[1] as $cat2)
+                    @foreach($cat1[0] as $cat2)
                     <div id="tab-{{ $cat2->en_name }}" class="tab_content">
                         @foreach($cat2->products as $product)
                         <div class="owl-carousel latest_category_tabs">

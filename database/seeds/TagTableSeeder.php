@@ -13,21 +13,21 @@ class TagTableSeeder extends Seeder
     public function run()
     {
         $Tag = new Tag();
-        $Tag->name = 'لباس';
+        $Tag->name = 'گل های آپارتمانی';
         $Tag->description = 'این یه تسته';
         $Tag->en_name = 'sdfew';
         $Tag->save();
 
 
         $Tag = new Tag();
-        $Tag->name = 'کفش';
+        $Tag->name = 'گل های فضای باز';
         $Tag->description = 'این یه تسته';
         $Tag->en_name = 'dsmf';
         $Tag->save();
 
 
         $Tag = new Tag();
-        $Tag->name = 'پیراهن';
+        $Tag->name = 'کاکتوس';
         $Tag->description = 'این یه تسته';
         $Tag->en_name = 'smdfj';
         $Tag->save();
