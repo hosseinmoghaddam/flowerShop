@@ -23,7 +23,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Data Table</strong>
+                    <strong class="card-title"></strong>
                 </div>
                 <div class="card-body">
 

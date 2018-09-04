@@ -30,6 +30,14 @@
                         <li><i class="fa fa-id-badge"></i><a href="{{ route('tag.create') }}" style="font-family: 'Samim', serif">افزودن دسته</a></li>
                     </ul>
                 </li>
+
+                <li class="menu-item-has-children active dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-laptop"></i>مدیریت بیلبرد</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-puzzle-piece"></i><a href="#" style="font-family: 'Samim', serif">600 در 250</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="#" style="font-family: 'Samim', serif">300 در 300</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
