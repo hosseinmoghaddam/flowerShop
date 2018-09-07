@@ -31,6 +31,7 @@ Route::get('/about', ['uses' => 'SiteController@about', 'as' => 'about']);
 Route::get('/contact', ['uses' => 'SiteController@contact', 'as' => 'contact']);
 Route::get('/tag/{tag}', ['uses' => 'SiteController@tag', 'as' => 'tag']);
 Route::post ('/search', ['uses' => 'SiteController@search', 'as' => 'search']);
+Route::post ('/message', ['uses' => 'MessageController@message', 'as' => 'message']);
 
 Auth::routes();
 
@@ -63,5 +64,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
     Route::get('/users/{user}/edit', ['uses' => 'UserController@edit', 'as' => 'user.edit']);
     Route::delete('/users/{user}', ['uses' => 'UserController@destroy', 'as' => 'user.destroy']);
     Route::patch('/users/{user}', ['uses' => 'UserController@update', 'as' => 'user.update']);
+
+    Route::get('/messages', ['uses' => 'MessageController@index', 'as' => 'message.index']);
+    Route::get('/messages/{message}/read', ['uses' => 'MessageController@read', 'as' => 'message.read']);
+    Route::delete('/messages/{message}', ['uses' => 'MessageController@destroy', 'as' => 'message.destroy']);
 
 });

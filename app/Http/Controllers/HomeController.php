@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use App\Product;
 use App\Tag;
+use App\User;
 use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {
@@ -31,6 +34,17 @@ class HomeController extends Controller
         $tags = Tag::all();
         $tagSum = count($tags);
 
-        return view('dashboard.index', ['productSum'=> $productSum, 'tagSum'=> $tagSum]);
+        $messages = Message::all();
+        $messageSum = count($messages);
+
+        $users = User::all();
+        $userSum = count($users);
+
+        return view('dashboard.index', [
+            'productSum'=> $productSum,
+            'tagSum'=> $tagSum,
+            'messageSum'=> $messageSum,
+            'userSum'=> $userSum,
+        ]);
     }
 }

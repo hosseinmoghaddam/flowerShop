@@ -26,7 +26,8 @@
                     <strong>دیدگاه ها</strong><br />
                     در اینجا توضیحات دلخواه خود را قرار دهید. فروشگاه چک قبول نمیکند! </div>
             </div>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="{{ route('message') }}">
+                @csrf
                 <fieldset>
                     <h3 class="subtitle">با ما ارتباط برقرار کنید</h3>
                     <div class="form-group required">
@@ -44,7 +45,7 @@
                     <div class="form-group required">
                         <label class="col-md-2 col-sm-3 control-label" for="input-enquiry">پرسش</label>
                         <div class="col-md-10 col-sm-9">
-                            <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"></textarea>
+                            <textarea name="message" rows="10" id="input-enquiry" class="form-control"></textarea>
                         </div>
                     </div>
                 </fieldset>

@@ -117,16 +117,7 @@ class ProductController extends Controller
 
         }
 
-//        $file = $request->files->get('image');
-////        if (auth()->user()->image == '') {
-//            $name = Hash::make($file->getClientOriginalName()) . '.png';
-////            auth()->user()->image = $name;
-////            auth()->user()->save();
-//        $product->update(['image1' => $name]);
-//            $file->move('hossein/photos', $name);
-//        return ['status' => true];
-////        } else
-////            $file->move('profiles/photos', auth()->user()->image);
+
     }
 
 }
