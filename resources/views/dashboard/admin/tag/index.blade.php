@@ -36,8 +36,8 @@
                                 <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{ $tag->name }}</td>
                                 <td>{{ $tag->description}}</td>
-                                <td><a href="#" class="btn btn-success btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-secondary btn-sm">Delete</a>
+                                <td>
+                                    <a href="{{ route('tag.edit', $tag->id ) }}" class="btn btn-success btn-sm">ویرایش</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -32,10 +32,10 @@
                 </li>
 
                 <li class="menu-item-has-children active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-laptop"></i>مدیریت بیلبرد</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-laptop"></i>مدیریت ادمین ها</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="#" style="font-family: 'Samim', serif">600 در 250</a></li>
-                        <li><i class="fa fa-id-badge"></i><a href="#" style="font-family: 'Samim', serif">300 در 300</a></li>
+                        <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('user.index') }}" style="font-family: 'Samim', serif">لیست ادمین ها</a></li>
+                        <li><i class="fa fa-id-badge"></i><a href="{{ route('user.create') }}" style="font-family: 'Samim', serif">افزودن ادمین</a></li>
                     </ul>
                 </li>
             </ul>

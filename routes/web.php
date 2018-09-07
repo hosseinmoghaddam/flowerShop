@@ -54,4 +54,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
     Route::get('/tags', ['uses' => 'TagController@index', 'as' => 'tag.index']);
     Route::get('/tags/create', ['uses' => 'TagController@create', 'as' => 'tag.create']);
     Route::post('/tags', ['uses' => 'TagController@store', 'as' => 'tag.store']);
+    Route::get('/tags/{tag}/edit', ['uses' => 'TagController@edit', 'as' => 'tag.edit']);
+    Route::patch('/tags/{tag}', ['uses' => 'TagController@update', 'as' => 'tag.update']);
+
+    Route::get('/users', ['uses' => 'UserController@index', 'as' => 'user.index']);
+    Route::get('/users/create', ['uses' => 'UserController@create', 'as' => 'user.create']);
+    Route::post('/users', ['uses' => 'UserController@store', 'as' => 'user.store']);
+    Route::get('/users/{user}/edit', ['uses' => 'UserController@edit', 'as' => 'user.edit']);
+    Route::delete('/users/{user}', ['uses' => 'UserController@destroy', 'as' => 'user.destroy']);
+    Route::patch('/users/{user}', ['uses' => 'UserController@update', 'as' => 'user.update']);
+
 });

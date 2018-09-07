@@ -32,6 +32,7 @@ class TagController extends Controller
 
         $this->validate($request,[
             'name' => 'required|string|max:255',
+            'description' => 'required|string',
             'en_name' => 'required|string|without_spaces|valid_username|max:255',
         ]);
 
@@ -45,5 +46,26 @@ class TagController extends Controller
 
         session()->flash('message', 'با موفقیت ثبت شد');
         return redirect(route('tag.index'));
+    }
+
+    public function edit(Tag $tag)
+    {
+        return view('dashboard.admin.tag.edit',compact('tag'));
+    }
+
+    public function update(Request $request, Tag $tag)
+    {
+
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $tag->update(['name' => $request->get('name'), 'description' => $request->get('description')]);
+
+        session()->flash('message', 'با موفقیت ویرایش شد');
+        return redirect(route('tag.index'));
+
+
     }
 }
