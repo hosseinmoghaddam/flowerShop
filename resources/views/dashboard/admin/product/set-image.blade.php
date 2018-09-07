@@ -73,40 +73,72 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
-                                <a href="{{ $product->image1 }}" class="gallery-popup" title="تصویر 1">
+                                <a href="@if ($product->image1)
+                                {{ $product->image1 }}?{{  time()}}
+                                @else
+                                        /site/image/product/apple_cinema_30-220x330.jpg
+@endif" class="gallery-popup" title="تصویر 1">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image1 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
+                                            <img src="@if ($product->image1)
+                                            {{ $product->image1 }}?{{  time()}}
+                                                @else
+                                                    /site/image/product/apple_cinema_30-220x330.jpg
+                                            @endif" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="{{ $product->image2 }}" class="gallery-popup" title="تصویر 2">
+                                <a href="@if ($product->image2)
+                                {{ $product->image2 }}?{{  time()}}
+                                @else
+                                        /site/image/product/apple_cinema_30-220x330.jpg
+@endif" class="gallery-popup" title="تصویر 2">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image2 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
+                                            <img src="@if ($product->image2)
+                                            {{ $product->image2 }}?{{  time()}}
+                                            @else
+                                                    /site/image/product/apple_cinema_30-220x330.jpg
+@endif" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="{{ $product->image3 }}" class="gallery-popup" title="تصویر 3">
+                                <a href="@if ($product->image3)
+                                {{ $product->image3 }}?{{  time()}}
+                                @else
+                                        /site/image/product/apple_cinema_30-220x330.jpg
+@endif" class="gallery-popup" title="تصویر 3">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image3 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
+                                            <img src="@if ($product->image3)
+                                            {{ $product->image3 }}?{{  time()}}
+                                            @else
+                                                    /site/image/product/apple_cinema_30-220x330.jpg
+@endif" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="{{ $product->image4 }}" class="gallery-popup" title="تصویر 4">
+                                <a href="@if ($product->image4)
+                                {{ $product->image4 }}?{{  time()}}
+                                @else
+                                        /site/image/product/apple_cinema_30-220x330.jpg
+@endif" class="gallery-popup" title="تصویر 4">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ $product->image4 }}?{{  time()}}" alt="img" class="gallery-thumb-img" />
+                                            <img src="@if ($product->image4)
+                                            {{ $product->image4 }}?{{  time()}}
+                                            @else
+                                                    /site/image/product/apple_cinema_30-220x330.jpg
+@endif" alt="img" class="gallery-thumb-img" />
 
                                         </div>
                                     </div>

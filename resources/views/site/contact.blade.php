@@ -7,13 +7,13 @@
             <h1 class="title">تماس با ما</h1>
             <h3 class="subtitle">محل ما</h3>
             <div class="row">
-                <div class="col-sm-3"><img src="image/product/store_location-275x180.jpg" alt="قالب مارکت شاپ" title="قالب مارکت شاپ" class="img-thumbnail" /></div>
-                <div class="col-sm-3"><strong>قالب مارکت شاپ</strong><br />
+
+                <div class="col-sm-3"><strong>آدرس فلورشاپ</strong><br />
                     <address>
-                        میدان مرکزی،<br />
-                        خیابان وینگ شماره 22،<br />
-                        نیویورک،<br />
-                        ایالات متحده </address>
+                        قاین،<br />
+                        میدان شیرازی،<br />
+                        خیابان بزرگمهر،<br />
+                        دانشگاه بزرگمهر </address>
                 </div>
                 <div class="col-sm-3"><strong>شماره تلفن</strong><br>
                     +91 9898989898<br />
@@ -58,15 +58,10 @@
         </div>
         <aside id="column-right" class="col-sm-3 hidden-xs">
             <div class="list-group">
-                <h2 class="subtitle">محتوای سفارشی</h2>
-                <p>این یک بلاک محتواست. هر نوع محتوایی شامل html، نوشته یا تصویر را میتوانید در آن قرار دهید. </p>
-                <p> در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد. </p>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-            </div>
-            <div class="banner owl-carousel">
-                <div class="item"> <a href="#"><img src="image/banner/small-banner1-265x350.jpg" alt="small banner" class="img-responsive" /></a> </div>
-                <div class="item"> <a href="#"><img src="image/banner/small-banner-265x350.jpg" alt="small banner1" class="img-responsive" /></a> </div>
-            </div>
+                <h2 class="subtitle">پیام مدیر سایت</h2>
+                <p>ماموریت ما ایجاد فرصتی است برای شما که به عزیزانتان نشان دهید به آنها اهمیت میدهید.</p>
+                    </div>
+
         </aside>
         <!--Middle Part End -->
     </div>
