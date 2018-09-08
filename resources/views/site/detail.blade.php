@@ -83,7 +83,7 @@
                                         <a class="qtyBtn mines" href="javascript:void(0);">-</a>
                                         <div class="clear"></div>
                                     </div>
-                                    <button type="button" id="button-cart" class="btn btn-primary btn-lg">افزودن به
+                                    <button type="button" id="button-cart" onClick="addToCare('{{route('add',$product->id)}}','{{csrf_token()}}')" class="btn btn-primary btn-lg">افزودن به
                                         سبد
                                     </button>
                                 </div>
@@ -164,7 +164,7 @@
                                     <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div>
                             </div>
                             <div class="button-group">
-                                <button class="btn-primary" type="button" onClick=""><span>افزودن به سبد</span></button>
+                                <button class="btn-primary" type="button" onClick="addToCare('{{route('add',$product->id)}}','{{csrf_token()}}')"><span>افزودن به سبد</span></button>
                                 <div class="add-to-links">
                                     <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی" onClick="">
                                         <i
@@ -231,6 +231,34 @@
             $.swipebox(ez.getGalleryList());
             return false;
         });
+
+
+
+        function addToCare(id,csrf) {
+            $.ajax({
+                url:id ,
+                method: 'Post',
+                async: true,
+                cache: false,
+                beforeSend: function (request) {
+                    request.setRequestHeader("X-CSRF-TOKEN", csrf);
+
+                },
+                complete: function () {
+
+                },
+                success: function (data) {
+                    alert('اضافه شد');
+                    $('#cart-total').html( data.count +"- آیتم "+ data.care  +" تومان " );
+
+                },
+                error: function (request, msg, error) {
+                    console.log(request, msg, error);
+
+                }
+            });
+        }
+
     </script>
 
 @endsection

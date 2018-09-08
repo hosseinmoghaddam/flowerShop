@@ -73,14 +73,14 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
-                                <a href="@if ($product->image1)
+                                <a href="@if ($product->image1 != '1.jpg')
                                 {{ $product->image1 }}?{{  time()}}
                                 @else
                                         /site/image/product/apple_cinema_30-220x330.jpg
 @endif" class="gallery-popup" title="تصویر 1">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="@if ($product->image1)
+                                            <img src="@if ($product->image1 != '1.jpg')
                                             {{ $product->image1 }}?{{  time()}}
                                                 @else
                                                     /site/image/product/apple_cinema_30-220x330.jpg
@@ -91,14 +91,14 @@
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="@if ($product->image2)
+                                <a href="@if ($product->image2 != '1.jpg')
                                 {{ $product->image2 }}?{{  time()}}
                                 @else
                                         /site/image/product/apple_cinema_30-220x330.jpg
 @endif" class="gallery-popup" title="تصویر 2">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="@if ($product->image2)
+                                            <img src="@if ($product->image2 != '1.jpg')
                                             {{ $product->image2 }}?{{  time()}}
                                             @else
                                                     /site/image/product/apple_cinema_30-220x330.jpg
@@ -109,14 +109,14 @@
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="@if ($product->image3)
+                                <a href="@if ($product->image3 != '1.jpg')
                                 {{ $product->image3 }}?{{  time()}}
                                 @else
                                         /site/image/product/apple_cinema_30-220x330.jpg
 @endif" class="gallery-popup" title="تصویر 3">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="@if ($product->image3)
+                                            <img src="@if ($product->image3 != '1.jpg')
                                             {{ $product->image3 }}?{{  time()}}
                                             @else
                                                     /site/image/product/apple_cinema_30-220x330.jpg
@@ -127,14 +127,14 @@
                                 </a>
                             </div>
                             <div class="col-md-3 col-sm-6">
-                                <a href="@if ($product->image4)
+                                <a href="@if ($product->image4 != '1.jpg')
                                 {{ $product->image4 }}?{{  time()}}
                                 @else
                                         /site/image/product/apple_cinema_30-220x330.jpg
 @endif" class="gallery-popup" title="تصویر 4">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="@if ($product->image4)
+                                            <img src="@if ($product->image4 != '1.jpg')
                                             {{ $product->image4 }}?{{  time()}}
                                             @else
                                                     /site/image/product/apple_cinema_30-220x330.jpg

@@ -80,7 +80,7 @@
                                         <a class="qtyBtn mines" href="javascript:void(0);">-</a>
                                         <div class="clear"></div>
                                     </div>
-                                    <button type="button" id="button-cart" class="btn btn-primary btn-lg">Add to Cart</button>
+                                    <button type="button" id="button-cart" onClick="addToCare('{{route('en.add',$product->id)}}','{{csrf_token()}}')" class="btn btn-primary btn-lg">Add to Cart</button>
                                 </div>
                                 <div>
                                     <button type="button" class="wishlist" onClick=""><i class="fa fa-heart"></i> Add to Wish List
@@ -158,7 +158,7 @@
                                     <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span></div>
                             </div>
                             <div class="button-group">
-                                <button class="btn-primary" type="button" onClick=""><span>Add to cart</span></button>
+                                <button class="btn-primary" type="button" onClick="addToCare('{{route('en.add',$product->id)}}','{{csrf_token()}}')"><span>Add to cart</span></button>
                                 <div class="add-to-links">
                                     <button type="button" data-toggle="tooltip" title="Add to Wish List" onClick="">
                                         <i
@@ -226,6 +226,31 @@
             $.swipebox(ez.getGalleryList());
             return false;
         });
+
+        function addToCare(id,csrf) {
+            $.ajax({
+                url:id ,
+                method: 'Post',
+                async: true,
+                cache: false,
+                beforeSend: function (request) {
+                    request.setRequestHeader("X-CSRF-TOKEN", csrf);
+
+                },
+                complete: function () {
+
+                },
+                success: function (data) {
+                    alert('added');
+                    $('#cart-total').html( data.count +"- Item "+ data.care  +" Toman " );
+
+                },
+                error: function (request, msg, error) {
+                    console.log(request, msg, error);
+
+                }
+            });
+        }
     </script>
 
 @endsection
