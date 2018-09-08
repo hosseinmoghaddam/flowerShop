@@ -27,8 +27,8 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Product::class, function () {
 
     return [
-        'name' => 'تستستتستس',
-        'description' => 'تستس تستست تستست',
+        'name' => 'نام یک گل',
+        'description' => 'توضیح درمورد گل',
         'image1' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
         'image2' =>  '/site/image/product/apple_cinema_30-220x330.jpg',
         'image3' =>  '/site/image/product/apple_cinema_30-220x330.jpg',

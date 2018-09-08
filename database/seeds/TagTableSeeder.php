@@ -13,23 +13,26 @@ class TagTableSeeder extends Seeder
     public function run()
     {
         $Tag = new Tag();
+        $Tag->id = 1;
         $Tag->name = 'گل های آپارتمانی';
-        $Tag->description = 'این یه تسته';
-        $Tag->en_name = 'sdfew';
+        $Tag->description = 'سبزی کامل گیاهان آپارتمانی هماهنگی بیشتری با رنگ ‌های دکوراسیون منزل شما دارند';
+        $Tag->en_name = 'apartment flowers';
         $Tag->save();
 
 
         $Tag = new Tag();
+        $Tag->id = 2;
         $Tag->name = 'گل های فضای باز';
         $Tag->description = 'این یه تسته';
-        $Tag->en_name = 'dsmf';
+        $Tag->en_name = 'Outdoor flowers';
         $Tag->save();
 
 
         $Tag = new Tag();
+        $Tag->id = 3;
         $Tag->name = 'کاکتوس';
-        $Tag->description = 'این یه تسته';
-        $Tag->en_name = 'smdfj';
+        $Tag->description = 'گیاهان فضای باز مناسب تزیین فضای سبز';
+        $Tag->en_name = 'Cactus';
         $Tag->save();
 
     }
