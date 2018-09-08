@@ -33,6 +33,23 @@ Route::get('/tag/{tag}', ['uses' => 'SiteController@tag', 'as' => 'tag']);
 Route::post ('/search', ['uses' => 'SiteController@search', 'as' => 'search']);
 Route::post ('/message', ['uses' => 'MessageController@message', 'as' => 'message']);
 
+
+Route::get('/en/', ['uses' => 'En\SiteController@index', 'as' => 'en.index']);
+Route::get('/en/products/{product}', ['uses' => 'En\SiteController@detail', 'as' => 'en.detail']);
+Route::get('/en/care', ['uses' => 'En\SiteController@care', 'as' => 'en.care']);
+//Route::get('/cart', ['uses' => 'SiteController@cart', 'as' => 'cart']);
+Route::post('/en/add/{product}', ['uses' => 'En\SiteController@add', 'as' => 'en.add']);
+Route::get('/en/shop', ['uses' => 'En\SiteController@shop', 'as' => 'en.shop']);
+Route::post('/en/shop', ['uses' => 'En\SiteController@shop', 'as' => 'en.shop']);
+Route::get('/en/blog', ['uses' => 'En\SiteController@blog', 'as' => 'en.blog']);
+Route::get('/en/about', ['uses' => 'En\SiteController@about', 'as' => 'en.about']);
+Route::get('/en/contact', ['uses' => 'En\SiteController@contact', 'as' => 'en.contact']);
+Route::get('/en/tag/{tag}', ['uses' => 'En\SiteController@tag', 'as' => 'en.tag']);
+Route::post ('/en/search', ['uses' => 'En\SiteController@search', 'as' => 'en.search']);
+Route::post ('/en/message', ['uses' => 'En\MessageController@message', 'as' => 'en.message']);
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
