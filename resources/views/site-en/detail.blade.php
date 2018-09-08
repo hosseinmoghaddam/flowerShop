@@ -51,7 +51,7 @@
                         <ul class="list-unstyled description">
                             <li><b>Category :</b>
                                 <p>    @foreach($product->tags as $tag)
-                                        <span class="instock">  {{ $tag->name }}</span> -
+                                        <span class="instock">  {{ $tag->en_name }}</span> -
                                     @endforeach </p>
                             </li>
                             <li><b>Barcode :</b> <span itemprop="mpn">{{ $product->id }}</span></li>

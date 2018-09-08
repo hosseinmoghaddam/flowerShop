@@ -23,9 +23,9 @@
             <!-- محصولات Tab Start -->
             <div id="product-tab" class="product-tab">
                 <ul id="tabs" class="tabs">
-                            <li><a href="#tab-{{ $tt->en_name }}">{{ $tt->name }}</a></li>
+                            <li><a href="#tab-one">{{ $tt->name }}</a></li>
                 </ul>
-                <div id="tab-{{ $tt->en_name }}" class="tab_content">
+                <div id="tab-one" class="tab_content">
                     <div class="owl-carousel product_carousel_tab">
                         @foreach($tt->products as $product)
                         <div class="product-thumb clearfix">
@@ -60,14 +60,14 @@
                 <div class="category-module-content">
                     <ul id="sub-cat" class="tabs">
 
-                                    <li><a href="#tab-{{ $tag2->en_name }}">{{ $tag2->name }}</a></li>
+                                    <li><a href="#tab-two">{{ $tag2->name }}</a></li>
                     </ul>
 
-                    <div id="tab-{{ $tag2->en_name }}" class="tab_content">
+                    <div id="tab-two" class="tab_content">
                         <div class="owl-carousel latest_category_tabs">
                             @foreach($tag2->products as $product)
                             <div class="product-thumb">
-                                <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="تبلت ایسر" title="تبلت ایسر" class="img-responsive" /></a></div>
+                                <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="img-responsive" /></a></div>
                                 <div class="caption">
                                     <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
                                     <p class="price"> <span class="price-new">{{ $product->price }}</span> <span class="price-old">240000 تومان</span> <span class="saving">-5%</span> </p>

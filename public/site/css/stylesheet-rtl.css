@@ -5,6 +5,18 @@
     Author URI: https://mrcode.ir
 
 -----------------------------------------------------------------------------------*/
+@font-face{
+	font-family:'WYekan';
+	src:url('persian-fonts/WYekan.eot?#') format('eot'),
+	url('persian-fonts/WYekan.ttf') format('truetype');
+}
+@font-face{
+	font-family:'BKoodakBold';
+	src:url('persian-fonts/BKoodakBold.eot?#') format('eot'),
+	url('persian-fonts/BKoodakBold.woff') format('woff'),
+	url('persian-fonts/BKoodakBold.ttf') format('truetype');
+}
+
 div {
 	direction:rtl;
 }

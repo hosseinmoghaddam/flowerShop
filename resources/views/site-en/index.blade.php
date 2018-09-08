@@ -23,9 +23,9 @@
             <!-- Product Tab Start -->
             <div id="product-tab" class="product-tab">
                 <ul id="tabs" class="tabs">
-                    <li><a href="#tab-{{ $tt->en_name }}">{{ $tt->name }}</a></li>
+                    <li><a href="#tab-one">{{ $tt->en_name }}</a></li>
                 </ul>
-                <div id="tab-{{ $tt->en_name }}" class="tab_content">
+                <div id="tab-one" class="tab_content">
                     <div class="owl-carousel product_carousel_tab">
                         @foreach($tt->products as $product)
                             <div class="product-thumb clearfix">
@@ -56,14 +56,14 @@
             <!-- Banner End -->
             <!-- Categories Product Slider Start-->
             <div class="category-module" id="latest_category">
-                <h3 class="subtitle">{{ $tag2->name }} <a class="viewall" href="{{ route('en.tag', $tag2->id) }}">نمایش همه</a></h3>
+                <h3 class="subtitle">{{ $tag2->en_name }} <a class="viewall" href="{{ route('en.tag', $tag2->id) }}">نمایش همه</a></h3>
                 <div class="category-module-content">
                     <ul id="sub-cat" class="tabs">
 
-                        <li><a href="#tab-{{ $tag2->en_name }}">{{ $tag2->name }}</a></li>
+                        <li><a href="#tab-two">{{ $tag2->en_name }}</a></li>
                     </ul>
 
-                    <div id="tab-{{ $tag2->en_name }}" class="tab_content">
+                    <div id="tab-two" class="tab_content">
                         <div class="owl-carousel latest_category_tabs">
                             @foreach($tag2->products as $product)
                                 <div class="product-thumb">
@@ -90,7 +90,7 @@
             <!-- Categories Product Slider End-->
 
             <!-- Categories Product Slider Start -->
-            <h3 class="subtitle">{{ $tag3->name }} - <a class="viewall" href="{{ route('en.tag', $tag3->id) }}">view all</a></h3>
+            <h3 class="subtitle">{{ $tag3->en_name }} - <a class="viewall" href="{{ route('en.tag', $tag3->id) }}">view all</a></h3>
             <div class="owl-carousel latest_category_carousel">
                 @foreach($tag3->products as $product)
                     <div class="product-thumb">

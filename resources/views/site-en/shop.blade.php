@@ -8,7 +8,7 @@
             <div class="box-category">
                 <ul id="cat_accordion">
                     @foreach($tags as $tag)
-                        <li><a href="{{ route('en.tag', $tag->id) }}">{{ $tag->name }}({{ count($tag->products) }})</a>
+                        <li><a href="{{ route('en.tag', $tag->id) }}">{{ $tag->en_name }}({{ count($tag->products) }})</a>
                         </li>
                     @endforeach
                 </ul>
@@ -18,7 +18,7 @@
         <!--Middle Part Start-->
         <div id="content" class="col-sm-9">
             @if ($cat)
-                <h1 class="title">{{ $cat->name }}</h1>
+                <h1 class="title">{{ $cat->en_name }}</h1>
                 <p>{{ $cat->description }}</p>
             @endif
 

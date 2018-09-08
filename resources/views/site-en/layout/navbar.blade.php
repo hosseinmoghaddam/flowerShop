@@ -9,7 +9,7 @@
                         <div class="hidden"> {{ $tags = \App\Tag::all() }}</div>
                         <ul>
                             @foreach($tags as $tag)
-                                <li><a href="{{ route('en.tag', $tag->id) }}"> {{ $tag->name }} </a>
+                                <li><a href="{{ route('en.tag', $tag->id) }}"> {{ $tag->en_name }} </a>
                             @endforeach
                         </ul>
                     </div>

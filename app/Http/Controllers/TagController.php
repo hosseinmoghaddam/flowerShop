@@ -20,7 +20,7 @@ class TagController extends Controller
 
     public function store(Request $request)
     {
-        \Validator::extend('valid_username', function($attr, $value){
+/*        \Validator::extend('valid_username', function($attr, $value){
 
             return preg_match('/^\S*$/u', $value);
 
@@ -28,12 +28,12 @@ class TagController extends Controller
 
         \Validator::extend('without_spaces', function($attr, $value){
             return preg_match('/^\S*$/u', $value);
-        });
+        });*/
 
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'en_name' => 'required|string|without_spaces|valid_username|max:255',
+            'en_name' => 'required|string|max:255',
         ]);
 
         $tag = new Tag([
@@ -59,9 +59,14 @@ class TagController extends Controller
         $this->validate($request,[
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'en_name' => 'required|string|max:255',
         ]);
 
-        $tag->update(['name' => $request->get('name'), 'description' => $request->get('description')]);
+        $tag->update([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'en_name' => $request->get('en_name'),
+        ]);
 
         session()->flash('message', 'با موفقیت ویرایش شد');
         return redirect(route('tag.index'));

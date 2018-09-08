@@ -25,7 +25,7 @@
                                 <small>Purchase Points : {{ $product->rate }}</small></td>
                             <td class="text-left">
                                 @foreach( $product->tags  as $tag)
-                                    <span class="btn btn-success">{{$tag->name}}</span>
+                                    <span class="btn btn-success">{{$tag->en_name}}</span>
                                 @endforeach
                             </td>
                             <td class="text-left"><div class="input-group btn-block quantity">

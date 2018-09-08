@@ -47,7 +47,7 @@
 
                                     <div class="col-md-12">
                                         <input id="en_name" class="form-control" name="en_name"
-                                               value="{{ old('en_name', $tag->en_name) }}" required disabled>
+                                               value="{{ old('en_name', $tag->en_name) }}" required>
                                         @if ($errors->has('en_name'))
                                             <span class="help-block">
                         <strong>{{ $errors->first('en_name') }}</strong>

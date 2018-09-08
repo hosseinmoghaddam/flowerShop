@@ -41,7 +41,7 @@
                                     <a class="btn btn-link btn-block language-select" href="{{ route('index') }}" name="GB"><img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی" /> فارسی</a>
                                 </li>
                                 <li>
-                                    <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/us.png" alt="English" title="English" /> English</button>
+                                    <a class="btn btn-link btn-block language-select" href="{{ route('en.index') }}" name="GB"><img src="/site/image/flags/us.png" alt="English" title="English" /> English</a>
                                 </li>
                             </ul>
                         </div>
