@@ -23,14 +23,11 @@
             <!-- محصولات Tab Start -->
             <div id="product-tab" class="product-tab">
                 <ul id="tabs" class="tabs">
-                    @foreach($cat1[0] as $cat)
-                            <li><a href="#tab-{{ $cat->en_name }}">{{ $cat->name }}</a></li>
-                    @endforeach
+                            <li><a href="#tab-{{ $tt->en_name }}">{{ $tt->name }}</a></li>
                 </ul>
-                @foreach($cat1[0] as $cat)
-                <div id="tab-{{ $cat->en_name }}" class="tab_content">
+                <div id="tab-{{ $tt->en_name }}" class="tab_content">
                     <div class="owl-carousel product_carousel_tab">
-                        @foreach($cat->products as $product)
+                        @foreach($tt->products as $product)
                         <div class="product-thumb clearfix">
                             <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="img-responsive" /></a></div>
                             <div class="caption">
@@ -48,7 +45,6 @@
    @endforeach
                     </div>
                 </div>
-                @endforeach
             </div>    <!-- محصولات Tab Start -->
             <!-- Banner Start -->
             <div class="marketshop-banner">
@@ -60,18 +56,16 @@
             <!-- Banner End -->
             <!-- دسته ها محصولات Slider Start-->
             <div class="category-module" id="latest_category">
-                <h3 class="subtitle">مد و زیبایی - <a class="viewall" href="category.tpl">نمایش همه</a></h3>
+                <h3 class="subtitle">{{ $tag2->name }} <a class="viewall" href="{{ route('tag', $tag2->id) }}">نمایش همه</a></h3>
                 <div class="category-module-content">
                     <ul id="sub-cat" class="tabs">
-                        <div class="hidden">{{ $i = 0 }}</div>
-                        @foreach($cat1[0] as $cat2)
-                                    <li><a href="#tab-{{ $cat2->en_name }}">{{ $cat2->name }}</a></li>
-          @endforeach
+
+                                    <li><a href="#tab-{{ $tag2->en_name }}">{{ $tag2->name }}</a></li>
                     </ul>
-                    @foreach($cat1[0] as $cat2)
-                    <div id="tab-{{ $cat2->en_name }}" class="tab_content">
-                        @foreach($cat2->products as $product)
+
+                    <div id="tab-{{ $tag2->en_name }}" class="tab_content">
                         <div class="owl-carousel latest_category_tabs">
+                            @foreach($tag2->products as $product)
                             <div class="product-thumb">
                                 <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="تبلت ایسر" title="تبلت ایسر" class="img-responsive" /></a></div>
                                 <div class="caption">
@@ -87,15 +81,36 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                             @endforeach
+                        </div>
                     </div>
-                        @endforeach
+
                 </div>
             </div>
             <!-- دسته ها محصولات Slider End-->
 
-
+            <!-- دسته ها محصولات Slider Start -->
+            <h3 class="subtitle">{{ $tag3->name }} <a class="viewall" href="{{ route('tag', $tag3->id) }}">نمایش همه</a></h3>
+            <div class="owl-carousel latest_category_carousel">
+                 @foreach($tag3->products as $product)
+                <div class="product-thumb">
+                    <div class="image"><a href="{{ route('detail', $product->id) }}"><img src="{{ $product->image1 }}" alt="{{ $product->name }}" title="{{ $product->name }}" class="img-responsive" /></a></div>
+                    <div class="caption">
+                        <h4><a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a></h4>
+                        <p class="price">{{ $product->price }}</p>
+                        <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-primary" type="button" onClick="addToCare('{{route('add',$product->id)}}','{{csrf_token()}}')"><span>افزودن به سبد</span></button>
+                        <div class="add-to-links">
+                            <button type="button" data-toggle="tooltip" title="افزودن به علاقه مندی" onClick=""><i class="fa fa-heart"></i></button>
+                            <button type="button" data-toggle="tooltip" title="افزودن به مقایسه" onClick=""><i class="fa fa-exchange"></i></button>
+                        </div>
+                    </div>
+                </div>
+                 @endforeach
+            </div>
+            <!-- دسته ها محصولات Slider End -->
 
             <!-- برند Logo Carousel Start-->
             <div id="carousel" class="owl-carousel nxt">

@@ -16,8 +16,16 @@ class SiteController extends Controller
         $cat1= Tag::all()->chunk(4);
         $specificProducts = Product::paginate(3);
         $tt =Tag::find(1);
+        $tag2 =Tag::find(2);
+        $tag3 =Tag::find(3);
 //        dd(Tag::find(1)->products);
-        return view('site.index', ['specificProducts' => $specificProducts, 'cat1' => $cat1 , 'tt' =>$tt]);
+        return view('site.index', [
+            'specificProducts' => $specificProducts,
+            'cat1' => $cat1,
+            'tt' =>$tt,
+            'tag2' =>$tag2,
+            'tag3' =>$tag3,
+            ]);
     }
 
     public function shop(Request $request)

@@ -38,7 +38,7 @@
                             <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> <img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی">فارسی <i class="fa fa-caret-down"></i></span></button>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی" /> فارسی</button>
+                                    <a class="btn btn-link btn-block language-select" href="{{ route('index') }}" name="GB"><img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی" /> فارسی</a>
                                 </li>
                                 <li>
                                     <button class="btn btn-link btn-block language-select" type="button" name="GB"><img src="/site/image/flags/us.png" alt="English" title="English" /> English</button>
