@@ -56,7 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar']], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -86,4 +86,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function ()
     Route::get('/messages/{message}/read', ['uses' => 'MessageController@read', 'as' => 'message.read']);
     Route::delete('/messages/{message}', ['uses' => 'MessageController@destroy', 'as' => 'message.destroy']);
 
+});
+
+
+Route::group(['prefix' => 'member', 'middleware' => ['web', 'auth', 'auth.sidebar']], function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
 });
