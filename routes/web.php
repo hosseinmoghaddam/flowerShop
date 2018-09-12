@@ -32,7 +32,7 @@ Route::get('/contact', ['uses' => 'SiteController@contact', 'as' => 'contact']);
 Route::get('/tag/{tag}', ['uses' => 'SiteController@tag', 'as' => 'tag']);
 Route::post ('/search', ['uses' => 'SiteController@search', 'as' => 'search']);
 Route::post ('/message', ['uses' => 'MessageController@message', 'as' => 'message']);
-
+Route::get('/checkout', ['uses' => 'SiteController@checkout', 'as' => 'checkout']);
 
 Route::get('/en/', ['uses' => 'En\SiteController@index', 'as' => 'en.index']);
 Route::get('/en/products/{product}', ['uses' => 'En\SiteController@detail', 'as' => 'en.detail']);
