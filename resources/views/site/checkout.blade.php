@@ -10,20 +10,23 @@
                 <p>شما به عنوان مهمان وارد سایت شده اید اگر حساب کاربری دارید ابتدا وارد شوید و اگر هم حساب کاربر ندارید می توانید با دکمه زیر یک حساب کاربری ایجاد کنید یا به عنوان مهمان فرم زیرا پر کنید</p>
                 <a href="{{ url('register') }}" class="btn btn-primary">ثبت نام</a> </div>
             <div class="row">
+                <form  method="post" action="{{ route('order.store') }}">
+                    @csrf
                 <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title"><i class="fa fa-user"></i> اطلاعات شخصی شما</h4>
                         </div>
                         <div class="panel-body">
+
                             <fieldset id="account">
                                 <div class="form-group required">
                                     <label for="input-payment-firstname" class="control-label">نام</label>
-                                    <input type="text" class="form-control" id="input-payment-firstname" placeholder="نام" value="" name="firstname">
+                                    <input type="text" class="form-control" id="input-payment-firstname" placeholder="نام" value="" name="first_name">
                                 </div>
                                 <div class="form-group required">
                                     <label for="input-payment-lastname" class="control-label">نام خانوادگی</label>
-                                    <input type="text" class="form-control" id="input-payment-lastname" placeholder="نام خانوادگی" value="" name="lastname">
+                                    <input type="text" class="form-control" id="input-payment-lastname" placeholder="نام خانوادگی" value="" name="last_name">
                                 </div>
                                 <div class="form-group required">
                                     <label for="input-payment-email" class="control-label">آدرس ایمیل</label>
@@ -31,7 +34,7 @@
                                 </div>
                                 <div class="form-group required">
                                     <label for="input-payment-telephone" class="control-label">شماره تلفن</label>
-                                    <input type="text" class="form-control" id="input-payment-telephone" placeholder="شماره تلفن" value="" name="telephone">
+                                    <input type="text" class="form-control" id="input-payment-telephone" placeholder="شماره تلفن" value="" name="phone_number">
                                 </div>
                                 <div class="form-group required">
                                     <label for="input-payment-address-1" class="control-label">آدرس </label>
@@ -39,8 +42,13 @@
                                 </div>
                                 <div class="form-group required">
                                     <label for="input-payment-postcode" class="control-label">کد پستی</label>
-                                    <input type="text" class="form-control" id="input-payment-postcode" placeholder="کد پستی" value="" name="postcode">
+                                    <input type="text" class="form-control" id="input-payment-postcode" placeholder="کد پستی" value="" name="postal_code">
                                 </div>
+                                <select hidden name="products[]" multiple="multiple" title="products">
+                                    @foreach($products as $product)
+                                        <option value="{{$product->id}}" selected>{{$product->name}}</option>
+                                    @endforeach
+                                </select>
                             </fieldset>
                         </div>
                     </div>
@@ -54,9 +62,10 @@
                                 </div>
                                 <div class="panel-body">
                                     <p>لطفا یک شیوه پرداخت برای سفارش خود انتخاب کنید.</p>
+                                    <input hidden type="number" value="0" name="pay_way">
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" checked="checked" name="Cash On Delivery">
+                                            <input type="radio" checked="checked" name="">
                                             پرداخت هنگام تحویل</label>
                                     </div>
                                     <div class="radio">
@@ -117,16 +126,13 @@
                                                 <td class="text-right" colspan="3">{{ $ps->sum() }} تومان</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-right" colspan="3"><strong>کسر هدیه:</strong></td>
-                                                <td class="text-right" colspan="3">4000 تومان</td>
-                                            </tr>
-                                            <tr>
                                                 <td class="text-right" colspan="3"><strong>مالیات:</strong></td>
                                                 <td class="text-right" colspan="3">{{ ($ps->sum())/9 }} تومان</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right" colspan="3"><strong>کل :</strong></td>
-                                                <td class="text-right" colspan="3">{{ ($ps->sum())-(($ps->sum())/9)-4000 }} تومان</td>
+                                                <td class="text-right" colspan="3">{{ ($ps->sum())-(($ps->sum())/9)}} تومان</td>
+                                                <input hidden type="number" value="{{ abs($ps->sum())-(($ps->sum())/9)}}" name="sum"/>
                                             </tr>
                                             </tfoot>
                                         </table>
@@ -141,21 +147,23 @@
                                     <h4 class="panel-title"><i class="fa fa-pencil"></i> افزودن توضیح برای سفارش.</h4>
                                 </div>
                                 <div class="panel-body">
-                                    <textarea rows="4" class="form-control" id="confirm_comment" name="comments"></textarea>
+                                    <textarea rows="4" class="form-control" id="confirm_comment" name="description"></textarea>
                                     <br>
                                     <label class="control-label" for="confirm_agree">
                                         <input type="checkbox" checked="checked" value="1" required="" class="validate required" id="confirm_agree" name="confirm agree">
                                         <span><a class="agree" href="#"><b>شرایط و قوانین</b></a> را خوانده ام و با آنها موافق هستم.</span> </label>
                                     <div class="buttons">
                                         <div class="pull-right">
-                                            <input type="button" class="btn btn-primary" id="button-confirm" value="تایید سفارش">
+                                            <input type="submit" class="btn btn-primary" id="button-confirm" value="تایید سفارش">
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
         <!--Middle Part End -->

@@ -47,9 +47,16 @@
                         </div>
                     </div>
                     <div id="top-links" class="nav pull-right flip">
-                        <ul>
-                            <li><a href="{{ route('login') }}">ورود</a></li>
-                        </ul>
+                        @if (auth()->guest())
+                            <ul>
+                                <li><a href="{{ route('login') }}">ورود</a></li>
+                                <li><a href="{{ route('register') }}">ثبت نام</a></li>
+                            </ul>
+                            @else
+                            <ul>
+                                <li><a href="{{ route('login') }}">{{ auth()->user()->name }}</a></li>
+                            </ul>
+                        @endif
                     </div>
                 </div>
             </div>

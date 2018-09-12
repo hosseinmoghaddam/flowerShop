@@ -31,5 +31,11 @@
         <ul class="sub-menu children dropdown-menu">
             <li><i class="fa fa-bars"></i><a href="{{ route('message.index') }}" style="font-family: 'Samim', serif">لیست پیام ها</a></li>
         </ul>
+    </li>    <li class="menu-item-has-children active dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Samim', serif"> <i class="menu-icon fa fa-comment"></i>مدیریت سفارشات</a>
+        <ul class="sub-menu children dropdown-menu">
+            <li><i class="fa fa-bars"></i><a href="{{ route('order.index') }}" style="font-family: 'Samim', serif">لیست سفارشات</a></li>
+        </ul>
     </li>
+
 </ul>

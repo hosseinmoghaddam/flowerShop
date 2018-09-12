@@ -33,6 +33,8 @@ Route::get('/tag/{tag}', ['uses' => 'SiteController@tag', 'as' => 'tag']);
 Route::post ('/search', ['uses' => 'SiteController@search', 'as' => 'search']);
 Route::post ('/message', ['uses' => 'MessageController@message', 'as' => 'message']);
 Route::get('/checkout', ['uses' => 'SiteController@checkout', 'as' => 'checkout']);
+Route::post ('/order', ['uses' => 'OrderController@store', 'as' => 'order.store']);
+
 
 Route::get('/en/', ['uses' => 'En\SiteController@index', 'as' => 'en.index']);
 Route::get('/en/products/{product}', ['uses' => 'En\SiteController@detail', 'as' => 'en.detail']);
@@ -86,6 +88,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar
     Route::get('/messages/{message}/read', ['uses' => 'MessageController@read', 'as' => 'message.read']);
     Route::delete('/messages/{message}', ['uses' => 'MessageController@destroy', 'as' => 'message.destroy']);
 
+    Route::get('/orders', ['uses' => 'OrderController@index', 'as' => 'order.index']);
+    Route::get ('/orders/{order}/detail', ['uses' => 'OrderController@detail', 'as' => 'order.detail']);
+    Route::post ('/orders/{order}/paying', ['uses' => 'OrderController@paying', 'as' => 'order.paying']);
 });
 
 
