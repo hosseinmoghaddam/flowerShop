@@ -103,20 +103,24 @@
                                                 <td class="text-right">{{ $ps->sum() }} تومان</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-right"><strong>کسر هدیه</strong></td>
-                                                <td class="text-right">4000 تومان</td>
-                                            </tr>
-                                            <tr>
                                                 <td class="text-right"><strong>مالیات</strong></td>
                                                 <td class="text-right">{{ ($ps->sum())/9 }} تومان</td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>قابل پرداخت</strong></td>
-                                                <td class="text-right">{{ ($ps->sum())-(($ps->sum())/9)-4000 }} تومان</td>
+                                                <td class="text-right">{{ ($ps->sum())-(($ps->sum())/9) }} تومان</td>
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p class="checkout"><a href="{{ route('care') }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="{{ route('checkout') }}" class="btn btn-primary"><i class="fa fa-share"></i> تسویه حساب</a></p>
+                                        <p class="checkout"><a href="{{ route('care') }}" class="btn btn-primary"
+                                            @if (count(\Session::get('products')) == 0)
+                                                disabled
+                                            @endif
+                                            ><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="{{ route('checkout') }}" class="btn btn-primary"
+                                                                                                                    @if (count(\Session::get('products')) == 0)
+                                                                                                                    disabled
+                                                    @endif
+                                            ><i class="fa fa-share"></i> تسویه حساب</a></p>
                                     </div>
                                 </li>
                             </ul>

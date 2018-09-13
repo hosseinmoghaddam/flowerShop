@@ -24,9 +24,10 @@ class OrderController extends Controller
             'address' => 'required|string',
             'postal_code' => 'required|string',
             'pay_way' => 'required|integer',
-            'description' => 'required',
+            'description' => 'max:500',
             'products' => 'required',
-            'sum' => 'required'
+            'sum' => 'required',
+            'delivery_date' => 'required|date',
         ]);
 
         $user_id = null;
@@ -45,16 +46,17 @@ class OrderController extends Controller
             'products' => $request->get('products'),
             'sum' => $request->get('sum'),
             'user_id' => $user_id,
+            'delivery_date' => $request->get('delivery_date'),
         ]);
         $order->save();
-
+        $request->session()->forget('products');
         return view('site.layout.message');
     }
 
     public function detail(Order $order)
     {
         $products = [];
-        for ($i = 1 ; $i < count($order->products); $i++){
+        for ($i = 1 ; $i <= count($order->products); $i++){
             $products[$i] = Product::find($i);
         }
 

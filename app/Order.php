@@ -19,6 +19,7 @@ class Order extends Model
         'user_id',
         'status',
         'sum',
+        'delivery_date',
     ];
 
     protected $casts = [

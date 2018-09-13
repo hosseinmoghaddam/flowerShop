@@ -32,6 +32,7 @@ Route::get('/contact', ['uses' => 'SiteController@contact', 'as' => 'contact']);
 Route::get('/tag/{tag}', ['uses' => 'SiteController@tag', 'as' => 'tag']);
 Route::post ('/search', ['uses' => 'SiteController@search', 'as' => 'search']);
 Route::post ('/message', ['uses' => 'MessageController@message', 'as' => 'message']);
+Route::get('/checkout1', ['uses' => 'SiteController@checkout1', 'as' => 'checkout1']);
 Route::get('/checkout', ['uses' => 'SiteController@checkout', 'as' => 'checkout']);
 Route::post ('/order', ['uses' => 'OrderController@store', 'as' => 'order.store']);
 
@@ -60,7 +61,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar']], function () {
 
-    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/products', ['uses' => 'ProductController@index', 'as' => 'product.index']);
     Route::get('/products/create', ['uses' => 'ProductController@create', 'as' => 'product.create']);
@@ -91,10 +91,22 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar
     Route::get('/orders', ['uses' => 'OrderController@index', 'as' => 'order.index']);
     Route::get ('/orders/{order}/detail', ['uses' => 'OrderController@detail', 'as' => 'order.detail']);
     Route::post ('/orders/{order}/paying', ['uses' => 'OrderController@paying', 'as' => 'order.paying']);
+
+
 });
 
 
-Route::group(['prefix' => 'member', 'middleware' => ['web', 'auth', 'auth.sidebar']], function () {
+Route::group([ 'middleware' => ['web', 'auth']], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/attachment', ['uses' => 'AttachmentController@create', 'as' => 'attachment.create']);
+    Route::post('/attachment', ['uses' => 'AttachmentController@store', 'as' => 'attachment.store']);
+    Route::get('/attachment/edit', ['uses' => 'AttachmentController@edit', 'as' => 'attachment.edit']);
+    Route::patch('/attachment', ['uses' => 'AttachmentController@update', 'as' => 'attachment.update']);
+
+    Route::get('/member/orders', ['uses' => 'Member\OrderController@index', 'as' => 'member.order.index']);
+    Route::get ('/member/orders/{order}/detail', ['uses' => 'Member\OrderController@detail', 'as' => 'member.order.detail']);
+//    Route::post ('/member/orders/{order}/paying', ['uses' => 'Member/OrderController@paying', 'as' => 'order.paying']);
+
+
 });

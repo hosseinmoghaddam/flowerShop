@@ -11,28 +11,30 @@
                 <a id="menuToggle" class="menutoggle pull-right"><i class="fa fa fa-tasks"></i></a>
                 <div class="header-left">
 
-                    <div class="dropdown for-message">
-                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-email"></i>
-                            <span class="count bg-primary">{{ count(\App\Message::all()->where('read',0)) }}</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="message">
-                            <p class="red">{{ count(\App\Message::all()->where('read',0)) }} پیام خوانده نشده .</p>
+                    @if (auth()->user()->role == 'admin')
+                        <div class="dropdown for-message">
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    id="message"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ti-email"></i>
+                                <span class="count bg-primary">{{ count(\App\Message::all()->where('read',0)) }}</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="message">
+                                <p class="red">{{ count(\App\Message::all()->where('read',0)) }} پیام خوانده نشده .</p>
 
-                            @foreach(\App\Message::all()->where('read',0) as $message)
-                            <a class="dropdown-item media bg-flat-color-1" href="{{ route('message.read', $message->id) }}">
+                                @foreach(\App\Message::all()->where('read',0) as $message)
+                                    <a class="dropdown-item media bg-flat-color-1" href="{{ route('message.read', $message->id) }}">
                                 <span class="message media-body">
                                     <span class="name float-left">{{$message->name}}</span>
                                     <span class="time float-right">{{$message->created_at}}</span>
                                         <p>{{$message->message}}</p>
                                 </span>
-                            </a>
+                                    </a>
                                 @endforeach
 
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
 

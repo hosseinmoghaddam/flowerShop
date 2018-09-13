@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::all()->where('role', 'admin');
         return view('dashboard.admin.user.index', compact('users'));
     }
 
@@ -34,6 +34,7 @@ class UserController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
+            'role' => 'admin'
         ]);
         $user->save();
         session()->flash('message', 'با موفقیت ثبت شد');

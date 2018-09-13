@@ -101,4 +101,10 @@ class SiteController extends Controller
         return view('site.checkout', compact('products'));
     }
 
+    public function checkout1()
+    {
+        $products = Session::get('products');
+        return view('site.checkout1', compact('products'));
+    }
+
 }

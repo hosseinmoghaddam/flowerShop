@@ -38,4 +38,11 @@
         </ul>
     </li>
 
+    <h3 class="menu-title" style="font-family: 'Samim', serif">بخش کابر</h3><!-- /.menu-title -->
+    <li class="menu-item-has-children active dropdown">
+        <a href="#" class="dropdown-toggle" style="font-family: 'Samim', serif" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-leaf"></i>ناحیه کاربری</a>
+        <ul class="sub-menu children dropdown-menu">
+            <li><i class="fa fa-bars"></i><a href="{{ route('attachment.create') }}" style="font-family: 'Samim', serif">کامل کردن اطلاعات</a></li>
+        </ul>
+    </li>
 </ul>
