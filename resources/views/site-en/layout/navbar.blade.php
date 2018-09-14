@@ -63,7 +63,7 @@
                     </div>
                 </li>
 
-                <li class="dropdown"><a href="{{ route('en.shop') }}">Gourmet</a>
+{{--                <li class="dropdown"><a href="{{ route('en.shop') }}">Gourmet</a>
                     <div class="dropdown-menu">
                         <div class="hidden"> {{ $tags = \App\Tag::all()->slice(31, 4) }}</div>
                         <ul>
@@ -72,7 +72,7 @@
                             @endforeach
                         </ul>
                     </div>
-                </li>
+                </li>--}}
 
                 <li class="dropdown"><a href="{{ route('en.shop') }}">Specials</a>
                     <div class="dropdown-menu">
