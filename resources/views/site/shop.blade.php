@@ -126,6 +126,8 @@
                 success: function (data) {
                     alert('اضافه شد');
                     $('#cart-total').html( data.count +"- آیتم "+ data.care  +" تومان " );
+                    $('#btncare').removeAttr('disabled');
+                    $('#btnsee').removeAttr('disabled');
 
                 },
                 error: function (request, msg, error) {

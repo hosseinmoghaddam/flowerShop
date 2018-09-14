@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div class="buttons">
-                <div class="pull-left"><a href="#" class="btn btn-default">Continue Shopping</a></div>
-                <div class="pull-right"><a href="#" class="btn btn-primary">Checkout</a></div>
+                <div class="pull-left"><a href="{{ route('en.index') }}" class="btn btn-primary">Continue Shopping</a></div>
+                <div class="pull-right"><a href="{{ route('en.checkout') }}" class="btn btn-primary">Checkout</a></div>
             </div>
         </div>
         <!--Middle Part End -->

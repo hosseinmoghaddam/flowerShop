@@ -125,6 +125,8 @@
                 success: function (data) {
                     alert('Added');
                     $('#cart-total').html( data.count +"- Item "+ data.care  +" Toman " );
+                    $('#btncare').removeAttr('disabled');
+                    $('#btnsee').removeAttr('disabled');
 
                 },
                 error: function (request, msg, error) {

@@ -96,4 +96,10 @@ class SiteController extends Controller
         return view('site-en.care', compact('products'));
     }
 
+    public function checkout()
+    {
+        $products = Session::get('products');
+        return view('site-en.checkout', compact('products'));
+    }
+
 }

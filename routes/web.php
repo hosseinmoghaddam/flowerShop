@@ -50,7 +50,8 @@ Route::get('/en/contact', ['uses' => 'En\SiteController@contact', 'as' => 'en.co
 Route::get('/en/tag/{tag}', ['uses' => 'En\SiteController@tag', 'as' => 'en.tag']);
 Route::post ('/en/search', ['uses' => 'En\SiteController@search', 'as' => 'en.search']);
 Route::post ('/en/message', ['uses' => 'En\MessageController@message', 'as' => 'en.message']);
-
+Route::get('/en/checkout', ['uses' => 'En\SiteController@checkout', 'as' => 'en.checkout']);
+Route::post ('en/order', ['uses' => 'OrderController@enstore', 'as' => 'en.order.store']);
 
 
 Auth::routes();

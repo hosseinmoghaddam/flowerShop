@@ -109,7 +109,15 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p class="checkout"><a href="{{ route('en.care') }}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> View Cart</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> Checkout</a></p>
+                                        <p class="checkout"><a href="{{ route('en.care') }}" class="btn btn-primary" id="btncare"
+                                                               @if (count(\Session::get('products')) == 0)
+                                                               disabled
+                                                    @endif
+                                            ><i class="fa fa-shopping-cart"></i> View Cart</a>&nbsp;&nbsp;&nbsp;<a href="{{route('en.checkout')}}" class="btn btn-primary" id="btnsee"
+                                                                                                                   @if (count(\Session::get('products')) == 0)
+                                                                                                                   disabled
+                                                    @endif><i class="fa fa-share"
+                                                                   ></i> Checkout</a></p>
                                     </div>
                                 </li>
                             </ul>
