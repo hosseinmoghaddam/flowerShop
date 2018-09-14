@@ -35,6 +35,11 @@
                             </div>
                         </div>
                     @endif
+
+                        <a href="{{ route('index') }}" class="btn btn-outline-primary" style="border-color: #ffffff;">خانه</a>
+
+                        <a href="{{ route('about') }}" class="btn btn-outline-primary"  style="border-color: #ffffff;">درباره</a>
+                        <a href="{{ route('contact') }}" class="btn btn-outline-primary"  style="border-color: #ffffff;"> تماس با ما</a>
                 </div>
             </div>
 

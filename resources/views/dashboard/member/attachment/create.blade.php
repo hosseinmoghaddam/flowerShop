@@ -1,11 +1,11 @@
 @extends('dashboard.layout.container')
 
 @section('title')
-افزودن گل جدید
+تکمیل اطلاعات
     @endsection
 
 @section('b-bs')
-    <li class="active">افزودن گل جدید</li>
+    <li class="active">تکمیل اطلاعات</li>
     <li><a href="#">مدیریت گلها</a></li>
     @endsection
 

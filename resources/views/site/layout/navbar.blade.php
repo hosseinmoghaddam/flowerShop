@@ -6,19 +6,98 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li><a class="home_link" title="خانه" href="{{ route('index') }}">خانه</a></li>
-                <li class="dropdown"><a href="{{ route('shop') }}">گلها</a>
-                    <div class="dropdown-menu">
-                       <div class="hidden"> {{ $tags = \App\Tag::all() }}</div>
-                        <ul>
-                            @foreach($tags as $tag)
-                            <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
-                                @endforeach
-                        </ul>
-                    </div>
-                </li>
+
                 <li><a class="home_link" title="درباره ما" href="{{ route('about') }}">درباره ما</a></li>
                 <li><a class="home_link" title="تماس با ماط" href="{{ route('contact') }}">تماس با ما</a></li>
 
+                <li class="dropdown"><a href="{{ route('shop') }}">روز تولد</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(0, 5) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">ابراز همدردی</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(5, 4) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">مناسبت</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(9, 6) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+
+                <li class="dropdown"><a href="{{ route('shop') }}">گلها</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(15, 9) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">گیاهان</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(24, 7) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">لذیذ</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(31, 4) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">ویژه</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(36, 2) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="dropdown"><a href="{{ route('shop') }}">بین المللی</a>
+                    <div class="dropdown-menu">
+                        <div class="hidden"> {{ $tags = \App\Tag::all()->slice(38, 5) }}</div>
+                        <ul>
+                            @foreach($tags as $tag)
+                                <li><a href="{{ route('tag', $tag->id) }}"> {{ $tag->name }} </a>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
 				 <!--       <li class="dropdown"> <a href="category.html">الکترونیکی</a>
                     <div class="dropdown-menu">
                         <ul>

@@ -2,6 +2,7 @@
 
 @section('page-specific-plugin-styles')
     <link rel="stylesheet" href="/datepickk/dist/datepickk.min.css">
+    <link rel="stylesheet" href="/persianDatepicker/css/persianDatepicker-default.css">
 @stop
 
 @section('content')
@@ -370,22 +371,20 @@
 
 @section('inline-scripts')
 
-
+    <script src="/persianDatepicker/js/persianDatepicker.js"></script>
 
     <script >
-        //Initialize
-        var datepicker = new Datepickk();
-        /*And some more stuff down there...*/
-        datepicker.closeOnSelect = true;
-        datepicker.onSelect = function(checked){
-            var state = (checked)?'selected':'unselected';
-            $('#delivery_date').attr('value',this.toLocaleDateString());
+        $(document).ready(function () {
 
-        };
 
-        datepicker.onClose = function(){
-            datepicker.unselectAll();
-        };
+            $("#delivery_date").persianDatepicker({
+                formatDate: "YYYY-0M-0D",
+                cellWidth: 30,
+                cellHeight: 30,
+                fontSize: 16
+            });
 
+
+});
     </script>
 @endsection

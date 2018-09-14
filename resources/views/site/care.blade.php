@@ -65,8 +65,11 @@
                 </div>
             </div>
             <div class="buttons">
-                <div class="pull-left"><a href="#" class="btn btn-default">ادامه خرید</a></div>
-                <div class="pull-right"><a href="#" class="btn btn-primary">تسویه حساب</a></div>
+                <div class="pull-left"><a href="{{ route('shop') }}" class="btn btn-primary">ادامه خرید</a></div>
+                <div class="pull-right"><a href="{{ route('checkout') }}" class="btn btn-primary"
+                                           @if (count(\Session::get('products')) == 0)
+                                           disabled
+                            @endif >تسویه حساب</a></div>
             </div>
         </div>
         <!--Middle Part End -->

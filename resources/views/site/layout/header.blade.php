@@ -112,11 +112,11 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p class="checkout"><a href="{{ route('care') }}" class="btn btn-primary"
+                                        <p class="checkout"><a href="{{ route('care') }}" class="btn btn-primary" id="btncare"
                                             @if (count(\Session::get('products')) == 0)
                                                 disabled
                                             @endif
-                                            ><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="{{ route('checkout') }}" class="btn btn-primary"
+                                            ><i class="fa fa-shopping-cart"></i> مشاهده سبد</a>&nbsp;&nbsp;&nbsp;<a href="{{ route('checkout') }}" class="btn btn-primary" id="btnsee"
                                                                                                                     @if (count(\Session::get('products')) == 0)
                                                                                                                     disabled
                                                     @endif
