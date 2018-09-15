@@ -22,7 +22,7 @@ class TagTableSeeder extends Seeder
 
         $Tag = new Tag();
         $Tag->id = 2;
-        $Tag->name = 'گلها و توت ها - کاملا جفت شده';
+        $Tag->name = 'گلها  - کاملا جفت شده';
         $Tag->description = 'گل های که با توت فرنگی ست شده اند';
         $Tag->en_name = 'Flowers & Berries - Perfectly Paired';
         $Tag->save();
