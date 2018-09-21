@@ -96,7 +96,7 @@
                     </div>
                 </li>
 
-                <li class="custom-link-right"><a href="#" target="_blank"> Buy Now!</a></li>
+                <li class="custom-link-right"><a href="{{ route('blog.index') }}" target="_blank"> Flower Blog</a></li>
             </ul>
         </div>
     </div>

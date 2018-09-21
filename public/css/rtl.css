@@ -35,3 +35,6 @@ div[class*="col-"] {
 .navbar-nav {
     padding-right: 0;
 }
+a:hover{
+    border-radius:15pt
+}

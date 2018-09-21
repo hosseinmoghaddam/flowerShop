@@ -34,38 +34,6 @@
             <div class="container">
                 <div class="row"> <span class="drop-icon visible-sm visible-xs"><i class="fa fa-align-justify"></i></span>
                     <div class="pull-left flip left-top">
-                        <div class="links">
-                            <ul>
-                                       <li class="wrap_custom_block hidden-sm hidden-xs"><a href="{{ route('blog.index') }}">بلاک سفارشی<b></b></a>
-                                    <div class="dropdown-menu custom_block" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <table>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td><img alt="" src="/site/image/banner/cms-block.jpg"></td>
-                                                        <td><img alt="" src="/site/image/banner/responsive.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><h4>بلاک های محتوا</h4></td>
-                                                        <td><h4>قالب واکنش گرا</h4></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید.</td>
-                                                        <td>این یک بلاک مدیریت محتواست. شما میتوانید هر نوع محتوای html نوشتاری یا تصویری را در آن قرار دهید.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><strong><a class="btn btn-default btn-sm" href="#">ادامه مطلب</a></strong></td>
-                                                        <td><strong><a class="btn btn-default btn-sm" href="#">ادامه مطلب</a></strong></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                         <div id="language" class="btn-group">
                             <button class="btn-link dropdown-toggle" data-toggle="dropdown"> <span> <img src="/site/image/flags/ir.png" alt="فارسی" title="فارسی">فارسی <i class="fa fa-caret-down"></i></span></button>
                             <ul class="dropdown-menu">

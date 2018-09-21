@@ -996,8 +996,9 @@ body.open .navbar .navbar-brand.hidden {
   display: block; }
 
 .open aside.left-panel {
-  max-width: 70px;
-  width: 70px; }
+  max-width: 107px;
+  width: 70px;
+  }
   .open aside.left-panel .navbar .navbar-brand {
     display: none; }
     .open aside.left-panel .navbar .navbar-brand.hidden {

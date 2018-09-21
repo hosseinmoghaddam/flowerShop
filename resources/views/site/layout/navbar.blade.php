@@ -267,7 +267,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="custom-link-right"><a href="#" target="_blank"> همین حالا بخرید!</a></li>
+                <li class="custom-link-right"><a href="{{ route('blog.index') }}" target="_blank">بلاگ گلها</a></li>
             </ul>
         </div>
     </div>
