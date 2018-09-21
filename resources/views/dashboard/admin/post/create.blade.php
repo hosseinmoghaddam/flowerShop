@@ -12,7 +12,7 @@
 @section('page-specific-plugin-styles')
     <link href="/js/lib/select2/css/select2.min.css" rel="stylesheet" type="text/css"/>
     <link href="/css/all.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="/simplemde/dist/simplemde.min.css">
     {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
 
 
@@ -144,7 +144,7 @@
     <script src="/js/lib/sweet-alert2/sweetalert2.min.js"></script>
 
     <script src="/js/lib/select2/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="/simplemde/dist/simplemde.min.js"></script>
 
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>--}}
 
