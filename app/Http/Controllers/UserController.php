@@ -13,6 +13,12 @@ class UserController extends Controller
         return view('dashboard.admin.user.index', compact('users'));
     }
 
+    public function members()
+    {
+        $users = User::all()->where('role', 'member');
+        return view('dashboard.admin.user.members', compact('users'));
+    }
+
 
     public function create()
     {
@@ -72,6 +78,42 @@ class UserController extends Controller
         $user->update($attributes);
         session()->flash('message', 'با موفقیت ویرایش شد');
         return redirect(route('user.index'));
+
+    }
+
+    public function memberUpdate(Request $request, User $user)
+    {
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            'password' => 'confirmed',
+        ]);
+
+        $attributes = $request->all();
+        if ($request->get('password') == null)
+            $attributes = array_except($attributes, ['password']);
+        else
+            $attributes['password'] = bcrypt($request->get('password'));
+        $user->update($attributes);
+        session()->flash('message', 'با موفقیت ویرایش شد');
+        return redirect(route('member.profile'));
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+
+        return view('dashboard.member.profile.profile', compact('user'));
+    }
+
+    public function profileUpload(Request $request)
+    {
+        $file = $request->files->get('image');
+
+        $name = auth()->user()->name . '.png';
+        $email = auth()->user()->email;
+        auth()->user()->image = '/profiles/'.$email.'/'.$name;
+        auth()->user()->save();
+        $file->move('profiles/'.$email, $name);
 
     }
 

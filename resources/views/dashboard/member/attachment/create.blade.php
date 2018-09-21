@@ -6,7 +6,7 @@
 
 @section('b-bs')
     <li class="active">تکمیل اطلاعات</li>
-    <li><a href="#">مدیریت گلها</a></li>
+    <li><a href="#">ناحیه کاربری</a></li>
     @endsection
 
 @section('page-specific-plugin-styles')

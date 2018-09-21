@@ -36,6 +36,15 @@ Route::get('/checkout1', ['uses' => 'SiteController@checkout1', 'as' => 'checkou
 Route::get('/checkout', ['uses' => 'SiteController@checkout', 'as' => 'checkout']);
 Route::post ('/order', ['uses' => 'OrderController@store', 'as' => 'order.store']);
 
+Route::get('/blogs', ['uses' => 'BlogController@index', 'as' => 'blog.index']);
+Route::get('/blogs/{post}', ['uses' => 'BlogController@post', 'as' => 'blog.post']);
+Route::get('/blog/tags', ['uses' => 'BlogController@tag', 'as' => 'blog.tag']);
+Route::get('/blogs/user/{user}', ['uses' => 'BlogController@getPostUser', 'as' => 'blog.getPostUser']);
+
+
+Route::post('/comment/{post}/create', ['uses' => 'CommentController@create', 'as' => 'comment.create']);
+
+
 
 Route::get('/en/', ['uses' => 'En\SiteController@index', 'as' => 'en.index']);
 Route::get('/en/products/{product}', ['uses' => 'En\SiteController@detail', 'as' => 'en.detail']);
@@ -85,6 +94,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar
     Route::delete('/users/{user}', ['uses' => 'UserController@destroy', 'as' => 'user.destroy']);
     Route::patch('/users/{user}', ['uses' => 'UserController@update', 'as' => 'user.update']);
 
+
+    Route::get('/members', ['uses' => 'UserController@members', 'as' => 'member.index']);
+
     Route::get('/messages', ['uses' => 'MessageController@index', 'as' => 'message.index']);
     Route::get('/messages/{message}/read', ['uses' => 'MessageController@read', 'as' => 'message.read']);
     Route::delete('/messages/{message}', ['uses' => 'MessageController@destroy', 'as' => 'message.destroy']);
@@ -92,6 +104,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth', 'auth.sidebar
     Route::get('/orders', ['uses' => 'OrderController@index', 'as' => 'order.index']);
     Route::get ('/orders/{order}/detail', ['uses' => 'OrderController@detail', 'as' => 'order.detail']);
     Route::post ('/orders/{order}/paying', ['uses' => 'OrderController@paying', 'as' => 'order.paying']);
+
+
+    Route::get('/posts', ['uses' => 'PostController@index', 'as' => 'post.index']);
+    Route::get('/posts/create', ['uses' => 'PostController@create', 'as' => 'post.create']);
+    Route::post('/posts', ['uses' => 'PostController@store', 'as' => 'post.store']);
+    Route::delete('/posts/{post}', ['uses' => 'PostController@destroy', 'as' => 'post.destroy']);
 
 
 });
@@ -108,6 +126,10 @@ Route::group([ 'middleware' => ['web', 'auth']], function () {
     Route::get('/member/orders', ['uses' => 'Member\OrderController@index', 'as' => 'member.order.index']);
     Route::get ('/member/orders/{order}/detail', ['uses' => 'Member\OrderController@detail', 'as' => 'member.order.detail']);
 //    Route::post ('/member/orders/{order}/paying', ['uses' => 'Member/OrderController@paying', 'as' => 'order.paying']);
+
+    Route::get('/profile', ['uses' => 'UserController@profile', 'as' => 'member.profile']);
+    Route::post('/profile', ['uses' => 'UserController@profileUpload', 'as' => 'member.profile.upload']);
+    Route::patch('/member/{user}', ['uses' => 'UserController@memberUpdate', 'as' => 'member.update']);
 
 
 });

@@ -40,22 +40,23 @@
 
                         <a href="{{ route('about') }}" class="btn btn-outline-primary"  style="border-color: #ffffff;">درباره</a>
                         <a href="{{ route('contact') }}" class="btn btn-outline-primary"  style="border-color: #ffffff;"> تماس با ما</a>
+                        <a href="{{ route('blog.index') }}" class="btn btn-outline-primary"  style="border-color: #ffffff;">بلاگ</a>
                 </div>
             </div>
 
             <div class="col-sm-5">
                 <div class="user-area dropdown float-left">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="/images/admin.jpg" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" id="avatar2" src="{{ auth()->user()->image }}" alt="User Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('member.profile') }}">پروفایل</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         خروج
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
